@@ -1,21 +1,18 @@
-package com.searchpicturetool;
+package com.searchpicturetool.UI;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
 
-import com.searchpicturetool.adapter.ListViewAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.searchpicturetool.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -46,13 +43,16 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        List<String> list=new ArrayList<String>();
-        for(int i=0;i<50;i++){
-           list.add("item"+i);
+        String[] tab_title=getResources().getStringArray(R.array.search_tab);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        for(int i=0;i<tab_title.length;i++){
+            tabLayout.addTab(tabLayout.newTab().setText(tab_title[i]));
         }
-        Log.e("list",list.size()+"");
-        ListView listView= (ListView) findViewById(R.id.listview);
-        listView.setAdapter(new ListViewAdapter(this,list));
+
+        ViewPager viewPager= (ViewPager) findViewById(R.id.vp_content);
+
+
+
     }
 
     @Override

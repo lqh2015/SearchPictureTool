@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
- <ScrollView
+ <com.searchpicturetool.UI.view.FitSystemWindowsRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    app:status_color="@color/colorPrimaryDark"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context="com.searchpicturetool.MainActivity"
+    tools:context=".UI.MainActivity"
     >
         <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,6 @@
             <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-
             android:theme="@style/AppTheme.AppBarOverlay">
                 <RelativeLayout
                 android:layout_width="match_parent"
@@ -26,15 +25,19 @@
                     android:layout_height="200dp"
                         android:background="@drawable/img3"
                     app:popupTheme="@style/AppTheme.PopupOverlay" />
-                    <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_alignParentBottom="true"
-                    android:paddingBottom="6dp"
-                    android:text="1111111111"/>
+
                 </RelativeLayout>
             </android.support.design.widget.AppBarLayout>
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabMode="scrollable"
+                android:layout_alignParentBottom="true"
+                app:tabIndicatorColor="@android:color/white"
+                app:tabTextColor="@android:color/white"
+                android:background="@color/font_blue"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
             <include layout="@layout/content_main" />
 
         <!--<android.support.design.widget.FloatingActionButton-->
@@ -45,4 +48,4 @@
         <!--android:layout_margin="@dimen/fab_margin"-->
         <!--android:src="@android:drawable/ic_dialog_email" />-->
         </LinearLayout>
-</ScrollView>
+</com.searchpicturetool.UI.view.FitSystemWindowsRelativeLayout>
